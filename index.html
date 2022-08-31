@@ -1,0 +1,37 @@
+<body>
+
+    <main></main>
+
+</body>
+
+
+<script>
+    async function getContent() {
+        try {
+            const response = await fetch('http://localhost:4567/') 
+            // "Eu espero, fetch, que você faça o que você tem que fazer e quando você terminar eu vou pegar uma resposta e colocar em uma variável chamada response"
+        
+            const data = await response.json() // "espera o response transformar em json ai você coloca no data "
+            show(data)
+
+        } catch (error) {
+            console.log("Erroooouuu");
+        }
+
+    // Tente a espera dessa promessa, se der certo coloque na constante response, se não der certo capture(cath) pegando o erro e colocando no console.error o erro pra gente 
+    
+    }    
+
+    getContent()
+
+    function show(users) { // colocando dados na tela 
+        let output = ''
+        for( let user of users) { // pegue usuário de usuários
+            output += `<li>${user.name}</li>`
+        }
+
+        document.querySelector('main').innerHTML = output
+    }
+
+
+</script>
