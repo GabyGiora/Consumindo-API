@@ -1,4 +1,3 @@
-## Consumindo API
 
 ## API (Criar uma API)  
 
